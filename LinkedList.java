@@ -71,17 +71,12 @@ public class LinkedList {
         }
         return out;
     }
-        /** 
-* Removes the first matched object and
-* returns the position of the removed object
-* from the LinkedList.
-* 
-* @param item represents the item the user wants to remove
-* @return     position of the removed item
-*/
-int remove(Object item) 
+    int remove(Object item) 
 {
-
+    head.next.next.next
+    Node prev = curr;
+    curr = curr.next;
+    prev.next = curr.next;
 }
 
 /**
@@ -96,5 +91,4 @@ Object remove(int position)
 {
 
 }
-
 }
