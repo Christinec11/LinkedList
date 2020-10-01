@@ -1,4 +1,4 @@
-package LinkedList;
+//package LinkedList;
 
 public class LinkedList {
     private Node head;
@@ -71,24 +71,50 @@ public class LinkedList {
         }
         return out;
     }
-    int remove(Object item) 
-{
-    head.next.next.next
-    Node prev = curr;
-    curr = curr.next;
-    prev.next = curr.next;
-}
 
-/**
-* Removes the object given the position and
-* returns the removed object from the LinkedList.
-* 
-* @param position represents the position of the object
-*                 to be removed
-* @return         the item that was removed
-*/
-Object remove(int position) 
-{
+    int remove(Object item) {
+        Node curr = head.next;
+        Node prev = head;
+        int index = 0;
+        while (curr != null) {
+            if (curr.item.equals(item)) {
+                break;
+            }
+            prev = curr;
+            curr = curr.next;
+            index++;
+        }
 
-}
+        if (curr != null) {
+            prev.next = curr.next;
+            return index;
+        }
+
+        return -1;
+
+        // head.next -> 7.next -> 6.next -> 10.next -> 11.next -> null
+    }
+
+    /**
+     * Removes the object given the position and returns the removed object from the
+     * LinkedList.
+     * 
+     * @param position represents the position of the object to be removed
+     * @return the item that was removed
+     */
+    Object remove(int position) {
+        Node curr = head.next;
+        Node prev = head;
+        int i = 0;
+        while (i != position && i < size) {
+            prev = curr;
+            curr = curr.next;
+            i++;
+        }
+        if (i < size) {
+            prev.next = curr.next;
+            return curr.item;
+        }
+        return null;
+    }
 }

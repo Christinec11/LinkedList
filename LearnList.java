@@ -1,4 +1,4 @@
-import LinkedList.*;
+//import LinkedList.*;
 
 class ArrayList {
     private Object[] array;
@@ -54,16 +54,20 @@ public class LearnList {
 
         LinkedList ll = new LinkedList();
 
-        ll.add(0, 6);
-        ll.add(1, 10);
-        ll.add(1, -18);
-        ll.add(7);
-        ll.add(32);
+        ll.add(0, "6");
+        ll.add(1, "10");
+        ll.add(1, "-18");
+        ll.add("7");
+        ll.add("32");
         //String a = "56456546456456", b = "56";
        // b = "56456546456456";
 
         //System.out.println(a == b);
 
-        System.out.print(11);
+        System.out.println(ll);
+        ll.remove("-18");
+        System.out.println(ll);
+        ll.remove(1);
+        System.out.println(ll);
     }
 }
